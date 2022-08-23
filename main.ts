@@ -1,15 +1,22 @@
 input.onButtonPressed(Button.A, function () {
+    basic.showString("A")
     if (Suma_1 == 0) {
         Suma_1 = 1
     } else if (Suma_1 == 1) {
         Suma_1 = 2
     } else if (Suma_1 == 3) {
+        basic.showIcon(IconNames.Yes)
         music.playMelody("G C C G D E F G ", 411)
         Suma_1 = 4
         basic.showString("Conejo Elena")
     } else {
-        Suma_1 = 0
+        Suma_1 = -1
+        basic.showIcon(IconNames.No)
     }
+})
+input.onGesture(Gesture.Shake, function () {
+    Suma_1 = 0
+    basic.showIcon(IconNames.Happy)
 })
 input.onButtonPressed(Button.AB, function () {
     if (Suma_1 == 3) {
@@ -18,17 +25,16 @@ input.onButtonPressed(Button.AB, function () {
     }
 })
 input.onButtonPressed(Button.B, function () {
+    basic.showString("B")
     if (Suma_1 == 2) {
         Suma_1 = 3
     } else {
-        Suma_1 = 0
+        Suma_1 = -1
+        basic.showIcon(IconNames.No)
     }
 })
 let Suma_1 = 0
-Suma_1 = 0
-let Melodia = "[f f]"
+Suma_1 = -1
 basic.forever(function () {
-    if (Suma_1 == 0) {
-        basic.clearScreen()
-    }
+	
 })
